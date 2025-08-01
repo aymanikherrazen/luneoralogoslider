@@ -1,0 +1,64 @@
+<style>
+.certification-slider {
+  overflow: hidden;
+  background-color: #fff;
+  padding: 20px 0;
+  position: relative;
+}
+
+.certification-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll-left 30s linear infinite;
+}
+
+.certification-track img {
+  height: 70px;
+  margin: 0 30px;
+
+  /* ✅ فلتر اللون الخاص بـ #B59B7B */
+  filter: sepia(1) saturate(600%) hue-rotate(10deg) brightness(95%);
+  opacity: 0.9;
+  transition: 0.3s ease;
+}
+
+.certification-track img:hover {
+  filter: none;
+  opacity: 1;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .certification-track img {
+    height: 40px;
+    margin: 0 20px;
+  }
+}
+</style>
+
+<div class="certification-slider">
+  <div class="certification-track">
+    <!-- Duplique les logos deux fois pour un scroll infini -->
+  <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/10/Certification-ONSSA-Carmel-Cosmetics-Labs-01-01.png" alt="Bio">
+    <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/10/Certification-ISO-Carmel-Cosmetics-Labs-01-01-01.png" alt="Vegan">
+    <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/12/Certification-ISO-9001-03-1024x473.png" alt="Cruelty-Free">
+    <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/10/Certification-GMP-Carmel-Cosmetics-Labs-01-01.png" alt="Sans parabène">
+    <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/10/Certification-Responsible-Care-Carmel-Cosmetics-Labs-01-01.png" alt="Testé dermatologiquement">
+
+    <!-- Copie identique pour scroll infini -->
+  <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/10/Certification-ONSSA-Carmel-Cosmetics-Labs-01-01.png" alt="Bio">
+    <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/10/Certification-ISO-Carmel-Cosmetics-Labs-01-01-01.png" alt="Vegan">
+    <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/12/Certification-ISO-9001-03-1024x473.png" alt="Cruelty-Free">
+    <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/10/Certification-GMP-Carmel-Cosmetics-Labs-01-01.png" alt="Sans parabène">
+    <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/10/Certification-Responsible-Care-Carmel-Cosmetics-Labs-01-01.png" alt="Testé dermatologiquement">
+</div>
+  </div>
