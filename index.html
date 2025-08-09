@@ -1,64 +1,313 @@
-<style>
-.certification-slider {
-  overflow: hidden;
-  background-color: #fff;
-  padding: 20px 0;
-  position: relative;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Partenaires - Entreprises de Confiance | Luxury Store</title>
+    <meta name="description" content="Découvrez nos partenaires de confiance. Des entreprises leaders qui nous font confiance pour leur stratégie digitale et leurs projets innovants.">
+    <meta name="keywords" content="partenaires, entreprises, confiance, collaboration, business, digital">
+    
+    <!-- Preconnect pour optimiser les fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Preload images critiques -->
+    <link rel="preload" href="https://logo.clearbit.com/microsoft.com" as="image">
+    <link rel="preload" href="https://logo.clearbit.com/google.com" as="image">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.certification-track {
-  display: flex;
-  width: fit-content;
-  animation: scroll-left 30s linear infinite;
-}
+        body {
+            font-family: 'Montserrat', -webkit-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #fff;
+            padding: 50px 0;
+            line-height: 1.6;
+        }
 
-.certification-track img {
-  height: 70px;
-  margin: 0 30px;
+        .partners-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-  /* ✅ فلتر اللون الخاص بـ #B59B7B */
-  filter: sepia(1) saturate(600%) hue-rotate(10deg) brightness(95%);
-  opacity: 0.9;
-  transition: 0.3s ease;
-}
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
 
-.certification-track img:hover {
-  filter: none;
-  opacity: 1;
-}
+        .section-title h2 {
+            font-size: 22px;
+            color: #000;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
 
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
+        .section-title p {
+            color: #595959;
+            font-size: 14px;
+            font-weight: 400;
+            font-family: 'Montserrat', sans-serif;
+        }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .certification-track img {
-    height: 40px;
-    margin: 0 20px;
-  }
-}
-</style>
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(111, 78, 55, 0.15);
+            padding: 40px 0;
+        }
 
-<div class="certification-slider">
-  <div class="certification-track">
-    <!-- Duplique les logos deux fois pour un scroll infini -->
-  <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/10/Certification-ONSSA-Carmel-Cosmetics-Labs-01-01.png" alt="Bio">
-    <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/10/Certification-ISO-Carmel-Cosmetics-Labs-01-01-01.png" alt="Vegan">
-    <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/12/Certification-ISO-9001-03-1024x473.png" alt="Cruelty-Free">
-    <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/10/Certification-GMP-Carmel-Cosmetics-Labs-01-01.png" alt="Sans parabène">
-    <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/10/Certification-Responsible-Care-Carmel-Cosmetics-Labs-01-01.png" alt="Testé dermatologiquement">
+        .slider-track {
+            display: flex;
+            animation: slide 20s linear infinite;
+            width: calc(200px * 16);
+            will-change: transform;
+        }
 
-    <!-- Copie identique pour scroll infini -->
-  <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/10/Certification-ONSSA-Carmel-Cosmetics-Labs-01-01.png" alt="Bio">
-    <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/10/Certification-ISO-Carmel-Cosmetics-Labs-01-01-01.png" alt="Vegan">
-    <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/12/Certification-ISO-9001-03-1024x473.png" alt="Cruelty-Free">
-    <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/10/Certification-GMP-Carmel-Cosmetics-Labs-01-01.png" alt="Sans parabène">
-    <img src="https://carmelcosmeticslabs.com/wp-content/uploads/2023/10/Certification-Responsible-Care-Carmel-Cosmetics-Labs-01-01.png" alt="Testé dermatologiquement">
-</div>
-  </div>
+        .partner-logo {
+            flex: 0 0 200px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .partner-logo:hover {
+            transform: scale(1.1);
+        }
+
+        .logo-img {
+            width: 150px;
+            height: 80px;
+            object-fit: contain;
+            filter: grayscale(100%) opacity(0.6);
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            background: #fff;
+            padding: 10px;
+            border: 2px solid transparent;
+            will-change: transform, filter;
+        }
+
+        .partner-logo:hover .logo-img {
+            filter: grayscale(0%) opacity(1);
+            transform: scale(1.05);
+            border-color: #6F4E37;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translate3d(calc(-200px * 8 - 160px), 0, 0);
+            }
+        }
+
+        /* Pause l'animation au survol */
+        .slider-container:hover .slider-track {
+            animation-play-state: paused;
+        }
+
+        /* Overlay gradients pour un effet de fondu */
+        .slider-container::before,
+        .slider-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .slider-container::before {
+            left: 0;
+            background: linear-gradient(to right, #fff, transparent);
+        }
+
+        .slider-container::after {
+            right: 0;
+            background: linear-gradient(to left, #fff, transparent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 20px;
+            }
+            
+            .section-title p {
+                font-size: 13px;
+            }
+            
+            .partner-logo {
+                flex: 0 0 120px;
+                margin: 0 8px;
+            }
+            
+            .logo-img {
+                width: 100px;
+                height: 60px;
+            }
+            
+            .slider-track {
+                width: calc(120px * 16);
+            }
+            
+            .partners-section {
+                padding: 0 15px;
+            }
+            
+            body {
+                padding: 30px 0;
+            }
+            
+            @keyframes slide {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translate3d(calc(-120px * 8 - 64px), 0, 0);
+                }
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title h2 {
+                font-size: 18px;
+            }
+            
+            .section-title p {
+                font-size: 12px;
+            }
+            
+            .partner-logo {
+                flex: 0 0 100px;
+                margin: 0 6px;
+            }
+            
+            .logo-img {
+                width: 80px;
+                height: 50px;
+            }
+            
+            .slider-track {
+                width: calc(100px * 16);
+            }
+        }
+
+        /* Version alternative avec contrôles */
+        .controls {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .control-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(111, 78, 55, 0.3);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .control-dot.active {
+            background: #6F4E37;
+        }
+    </style>
+</head>
+<body>
+    <section class="partners-section">
+        <div class="section-title">
+            <h2>Nos Partenaires</h2>
+            <p>Ils nous font confiance pour leur stratégie digitale</p>
+        </div>
+
+        <div class="slider-container">
+            <div class="slider-track">
+                <!-- Premier set de logos -->
+                <div class="partner-logo">
+                    <img src="https://i.postimg.cc/VsgKQbJc/Certification-GMP-Carmel-Cosmetics-Labs-01-01.webp" alt="Certification GMP" class="logo-img">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://i.postimg.cc/52h3qBR8/Certification-ISO-9001-03-1024x473-1.webp" alt="Certification ISO" class="logo-img">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://i.postimg.cc/dVk6yH4q/Certification-ONSSA-Carmel-Cosmetics-Labs-01-01.webp" alt="Certification ONSSA" class="logo-img">
+                </div>
+                                <div class="partner-logo">
+                    <img src="https://i.postimg.cc/TYPCRYb5/Certification-ISO-Carmel-Cosmetics-Labs-01-01-01.webp" alt="Certification ISO" class="logo-img">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://i.postimg.cc/BQwNt95Y/Certification-Responsible-Care-Carmel-Cosmetics-Labs-01-01.webp" alt="Certification Responsible Care" class="logo-img">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://i.postimg.cc/mr7SdPvJ/Certification-USDA-Organic-Carmel-Cosmetics-Labs-01-01.webp" alt="Certification USDA" class="logo-img">
+                </div>
+
+                <!-- Duplication pour loop infini -->
+                               <div class="partner-logo">
+                    <img src="https://i.postimg.cc/VsgKQbJc/Certification-GMP-Carmel-Cosmetics-Labs-01-01.webp" alt="Certification GMP" class="logo-img">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://i.postimg.cc/52h3qBR8/Certification-ISO-9001-03-1024x473-1.webp" alt="Certification ISO" class="logo-img">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://i.postimg.cc/dVk6yH4q/Certification-ONSSA-Carmel-Cosmetics-Labs-01-01.webp" alt="Certification ONSSA" class="logo-img">
+                </div>
+                                <div class="partner-logo">
+                    <img src="https://i.postimg.cc/TYPCRYb5/Certification-ISO-Carmel-Cosmetics-Labs-01-01-01.webp" alt="Certification ISO" class="logo-img">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://i.postimg.cc/BQwNt95Y/Certification-Responsible-Care-Carmel-Cosmetics-Labs-01-01.webp" alt="Certification Responsible Care" class="logo-img">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://i.postimg.cc/mr7SdPvJ/Certification-USDA-Organic-Carmel-Cosmetics-Labs-01-01.webp" alt="Certification USDA" class="logo-img">
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <span class="control-dot active"></span>
+            <span class="control-dot"></span>
+            <span class="control-dot"></span>
+        </div>
+    </section>
+
+    <script>
+        // Animation des points de contrôle (optionnel)
+        const dots = document.querySelectorAll('.control-dot');
+        let currentDot = 0;
+
+        setInterval(() => {
+            dots[currentDot].classList.remove('active');
+            currentDot = (currentDot + 1) % dots.length;
+            dots[currentDot].classList.add('active');
+        }, 3000);
+
+        // Pause de l'animation sur hover
+        const sliderContainer = document.querySelector('.slider-container');
+        const sliderTrack = document.querySelector('.slider-track');
+
+        sliderContainer.addEventListener('mouseenter', () => {
+            sliderTrack.style.animationPlayState = 'paused';
+        });
+
+        sliderContainer.addEventListener('mouseleave', () => {
+            sliderTrack.style.animationPlayState = 'running';
+        });
+    </script>
+</body>
+</html>
