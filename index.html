@@ -3,18 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Partenaires - Entreprises de Confiance | Luxury Store</title>
-    <meta name="description" content="Découvrez nos partenaires de confiance. Des entreprises leaders qui nous font confiance pour leur stratégie digitale et leurs projets innovants.">
-    <meta name="keywords" content="partenaires, entreprises, confiance, collaboration, business, digital">
+    <title>Certifications | Carmel Cosmetics Labs</title>
+    <meta name="description" content="Certifications professionnelles et standards qualité internationaux">
     
-    <!-- Preconnect pour optimiser les fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Preconnect optimisation -->
+    <link rel="preconnect" href="https://i.postimg.cc">
     
-    <!-- Preload images critiques -->
-    <link rel="preload" href="https://logo.clearbit.com/microsoft.com" as="image">
-    <link rel="preload" href="https://logo.clearbit.com/google.com" as="image">
     <style>
         * {
             margin: 0;
@@ -23,102 +17,89 @@
         }
 
         body {
-            font-family: 'Montserrat', -webkit-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: #fff;
-            padding: 50px 0;
-            line-height: 1.6;
+            font-family: system-ui, -apple-system, sans-serif;
+            overflow-x: hidden;
         }
 
-        .partners-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 22px;
-            color: #000;
-            margin-bottom: 8px;
-            font-weight: 600;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .section-title p {
-            color: #595959;
-            font-size: 14px;
-            font-weight: 400;
-            font-family: 'Montserrat', sans-serif;
+        .certifications-slider {
+            width: 100%;
+            padding: 60px 0;
+            background: #fff;
         }
 
         .slider-container {
             position: relative;
             overflow: hidden;
+            width: 100%;
             background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(111, 78, 55, 0.15);
-            padding: 40px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
         }
 
         .slider-track {
             display: flex;
-            animation: slide 20s linear infinite;
-            width: calc(200px * 16);
+            animation: autoSlide 30s linear infinite;
+            width: calc(280px * 12);
             will-change: transform;
+            backface-visibility: hidden;
         }
 
-        .partner-logo {
-            flex: 0 0 200px;
-            height: 100px;
+        .cert-item {
+            flex: 0 0 280px;
+            height: 140px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 20px;
-            transition: transform 0.3s ease;
+            padding: 30px;
+            position: relative;
         }
 
-        .partner-logo:hover {
-            transform: scale(1.1);
-        }
-
-        .logo-img {
-            width: 150px;
-            height: 80px;
+        .cert-logo {
+            max-width: 220px;
+            max-height: 80px;
+            width: auto;
+            height: auto;
             object-fit: contain;
-            filter: grayscale(100%) opacity(0.6);
-            transition: all 0.3s ease;
-            border-radius: 8px;
-            background: #fff;
-            padding: 10px;
-            border: 2px solid transparent;
-            will-change: transform, filter;
+            opacity: 0.9;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform, opacity;
         }
 
-        .partner-logo:hover .logo-img {
-            filter: grayscale(0%) opacity(1);
-            transform: scale(1.05);
-            border-color: #6F4E37;
+        .cert-item:hover .cert-logo {
+            opacity: 1;
+            transform: scale(1.02);
         }
 
-        @keyframes slide {
+        /* Séparateurs subtils */
+        .cert-item::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, transparent, #e8e8e8, transparent);
+            opacity: 0.5;
+        }
+
+        @keyframes autoSlide {
             0% {
-                transform: translateX(0);
+                transform: translate3d(0, 0, 0);
             }
             100% {
-                transform: translate3d(calc(-200px * 8 - 160px), 0, 0);
+                transform: translate3d(calc(-280px * 6), 0, 0);
             }
         }
 
-        /* Pause l'animation au survol */
+        /* Pause au survol */
         .slider-container:hover .slider-track {
             animation-play-state: paused;
         }
 
-        /* Overlay gradients pour un effet de fondu */
+        /* Effets de fondu élégants */
         .slider-container::before,
         .slider-container::after {
             content: '';
@@ -126,187 +107,241 @@
             top: 0;
             width: 100px;
             height: 100%;
-            z-index: 2;
+            z-index: 10;
             pointer-events: none;
         }
 
         .slider-container::before {
             left: 0;
-            background: linear-gradient(to right, #fff, transparent);
+            background: linear-gradient(to right, #fff 0%, rgba(255,255,255,0.8) 70%, transparent 100%);
         }
 
         .slider-container::after {
             right: 0;
-            background: linear-gradient(to left, #fff, transparent);
+            background: linear-gradient(to left, #fff 0%, rgba(255,255,255,0.8) 70%, transparent 100%);
         }
 
-        /* Responsive */
+        /* Responsive Mobile */
         @media (max-width: 768px) {
-            .section-title h2 {
-                font-size: 20px;
-            }
-            
-            .section-title p {
-                font-size: 13px;
-            }
-            
-            .partner-logo {
-                flex: 0 0 120px;
-                margin: 0 8px;
-            }
-            
-            .logo-img {
-                width: 100px;
-                height: 60px;
+            .certifications-slider {
+                padding: 40px 0;
             }
             
             .slider-track {
-                width: calc(120px * 16);
+                width: calc(200px * 12);
+                animation-duration: 25s;
             }
             
-            .partners-section {
-                padding: 0 15px;
+            .cert-item {
+                flex: 0 0 200px;
+                height: 120px;
+                padding: 20px;
             }
             
-            body {
-                padding: 30px 0;
+            .cert-logo {
+                max-width: 160px;
+                max-height: 70px;
             }
             
-            @keyframes slide {
+            .slider-container::before,
+            .slider-container::after {
+                width: 60px;
+            }
+            
+            @keyframes autoSlide {
                 0% {
-                    transform: translateX(0);
+                    transform: translate3d(0, 0, 0);
                 }
                 100% {
-                    transform: translate3d(calc(-120px * 8 - 64px), 0, 0);
+                    transform: translate3d(calc(-200px * 6), 0, 0);
                 }
             }
         }
 
         @media (max-width: 480px) {
-            .section-title h2 {
-                font-size: 18px;
-            }
-            
-            .section-title p {
-                font-size: 12px;
-            }
-            
-            .partner-logo {
-                flex: 0 0 100px;
-                margin: 0 6px;
-            }
-            
-            .logo-img {
-                width: 80px;
-                height: 50px;
+            .certifications-slider {
+                padding: 30px 0;
             }
             
             .slider-track {
-                width: calc(100px * 16);
+                width: calc(160px * 12);
+                animation-duration: 22s;
+            }
+            
+            .cert-item {
+                flex: 0 0 160px;
+                height: 100px;
+                padding: 15px;
+            }
+            
+            .cert-logo {
+                max-width: 130px;
+                max-height: 60px;
+            }
+            
+            .slider-container {
+                box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            }
+            
+            .slider-container::before,
+            .slider-container::after {
+                width: 40px;
+            }
+            
+            @keyframes autoSlide {
+                0% {
+                    transform: translate3d(0, 0, 0);
+                }
+                100% {
+                    transform: translate3d(calc(-160px * 6), 0, 0);
+                }
             }
         }
 
-        /* Version alternative avec contrôles */
-        .controls {
-            text-align: center;
-            margin-top: 30px;
+        /* Performance optimizations */
+        .slider-track {
+            transform-style: preserve-3d;
         }
 
-        .control-dot {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(111, 78, 55, 0.3);
-            margin: 0 5px;
-            cursor: pointer;
-            transition: background 0.3s ease;
+        .cert-logo {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
         }
 
-        .control-dot.active {
-            background: #6F4E37;
+        /* Accessibilité */
+        @media (prefers-reduced-motion: reduce) {
+            .slider-track {
+                animation-duration: 120s;
+            }
+            
+            .cert-logo {
+                transition: none;
+            }
         }
     </style>
 </head>
 <body>
-    <section class="partners-section">
-        <div class="section-title">
-            <h2>Nos Partenaires</h2>
-            <p>Ils nous font confiance pour leur stratégie digitale</p>
-        </div>
-
+    <section class="certifications-slider">
         <div class="slider-container">
             <div class="slider-track">
-                <!-- Premier set de logos -->
-                <div class="partner-logo">
-                    <img src="https://i.postimg.cc/VsgKQbJc/Certification-GMP-Carmel-Cosmetics-Labs-01-01.webp" alt="Certification GMP" class="logo-img">
+                <!-- Premier cycle -->
+                <div class="cert-item">
+                    <img src="https://i.postimg.cc/VsgKQbJc/Certification-GMP-Carmel-Cosmetics-Labs-01-01.webp" 
+                         alt="Certification GMP" 
+                         class="cert-logo"
+                         loading="eager">
                 </div>
-                <div class="partner-logo">
-                    <img src="https://i.postimg.cc/52h3qBR8/Certification-ISO-9001-03-1024x473-1.webp" alt="Certification ISO" class="logo-img">
+                <div class="cert-item">
+                    <img src="https://i.postimg.cc/52h3qBR8/Certification-ISO-9001-03-1024x473-1.webp" 
+                         alt="Certification ISO 9001" 
+                         class="cert-logo"
+                         loading="lazy">
                 </div>
-                <div class="partner-logo">
-                    <img src="https://i.postimg.cc/dVk6yH4q/Certification-ONSSA-Carmel-Cosmetics-Labs-01-01.webp" alt="Certification ONSSA" class="logo-img">
+                <div class="cert-item">
+                    <img src="https://i.postimg.cc/TYPCRYb5/Certification-ISO-Carmel-Cosmetics-Labs-01-01-01.webp" 
+                         alt="Certification ISO" 
+                         class="cert-logo"
+                         loading="lazy">
                 </div>
-                                <div class="partner-logo">
-                    <img src="https://i.postimg.cc/TYPCRYb5/Certification-ISO-Carmel-Cosmetics-Labs-01-01-01.webp" alt="Certification ISO" class="logo-img">
+                <div class="cert-item">
+                    <img src="https://i.postimg.cc/dVk6yH4q/Certification-ONSSA-Carmel-Cosmetics-Labs-01-01.webp" 
+                         alt="Certification ONSSA" 
+                         class="cert-logo"
+                         loading="lazy">
                 </div>
-                <div class="partner-logo">
-                    <img src="https://i.postimg.cc/BQwNt95Y/Certification-Responsible-Care-Carmel-Cosmetics-Labs-01-01.webp" alt="Certification Responsible Care" class="logo-img">
+                <div class="cert-item">
+                    <img src="https://i.postimg.cc/BQwNt95Y/Certification-Responsible-Care-Carmel-Cosmetics-Labs-01-01.webp" 
+                         alt="Certification Responsible Care" 
+                         class="cert-logo"
+                         loading="lazy">
                 </div>
-                <div class="partner-logo">
-                    <img src="https://i.postimg.cc/mr7SdPvJ/Certification-USDA-Organic-Carmel-Cosmetics-Labs-01-01.webp" alt="Certification USDA" class="logo-img">
+                <div class="cert-item">
+                    <img src="https://i.postimg.cc/mr7SdPvJ/Certification-USDA-Organic-Carmel-Cosmetics-Labs-01-01.webp" 
+                         alt="Certification USDA Organic" 
+                         class="cert-logo"
+                         loading="lazy">
                 </div>
 
-                <!-- Duplication pour loop infini -->
-                               <div class="partner-logo">
-                    <img src="https://i.postimg.cc/VsgKQbJc/Certification-GMP-Carmel-Cosmetics-Labs-01-01.webp" alt="Certification GMP" class="logo-img">
+                <!-- Deuxième cycle pour boucle infinie -->
+                <div class="cert-item">
+                    <img src="https://i.postimg.cc/VsgKQbJc/Certification-GMP-Carmel-Cosmetics-Labs-01-01.webp" 
+                         alt="Certification GMP" 
+                         class="cert-logo"
+                         loading="lazy">
                 </div>
-                <div class="partner-logo">
-                    <img src="https://i.postimg.cc/52h3qBR8/Certification-ISO-9001-03-1024x473-1.webp" alt="Certification ISO" class="logo-img">
+                <div class="cert-item">
+                    <img src="https://i.postimg.cc/52h3qBR8/Certification-ISO-9001-03-1024x473-1.webp" 
+                         alt="Certification ISO 9001" 
+                         class="cert-logo"
+                         loading="lazy">
                 </div>
-                <div class="partner-logo">
-                    <img src="https://i.postimg.cc/dVk6yH4q/Certification-ONSSA-Carmel-Cosmetics-Labs-01-01.webp" alt="Certification ONSSA" class="logo-img">
+                <div class="cert-item">
+                    <img src="https://i.postimg.cc/TYPCRYb5/Certification-ISO-Carmel-Cosmetics-Labs-01-01-01.webp" 
+                         alt="Certification ISO" 
+                         class="cert-logo"
+                         loading="lazy">
                 </div>
-                                <div class="partner-logo">
-                    <img src="https://i.postimg.cc/TYPCRYb5/Certification-ISO-Carmel-Cosmetics-Labs-01-01-01.webp" alt="Certification ISO" class="logo-img">
+                <div class="cert-item">
+                    <img src="https://i.postimg.cc/dVk6yH4q/Certification-ONSSA-Carmel-Cosmetics-Labs-01-01.webp" 
+                         alt="Certification ONSSA" 
+                         class="cert-logo"
+                         loading="lazy">
                 </div>
-                <div class="partner-logo">
-                    <img src="https://i.postimg.cc/BQwNt95Y/Certification-Responsible-Care-Carmel-Cosmetics-Labs-01-01.webp" alt="Certification Responsible Care" class="logo-img">
+                <div class="cert-item">
+                    <img src="https://i.postimg.cc/BQwNt95Y/Certification-Responsible-Care-Carmel-Cosmetics-Labs-01-01.webp" 
+                         alt="Certification Responsible Care" 
+                         class="cert-logo"
+                         loading="lazy">
                 </div>
-                <div class="partner-logo">
-                    <img src="https://i.postimg.cc/mr7SdPvJ/Certification-USDA-Organic-Carmel-Cosmetics-Labs-01-01.webp" alt="Certification USDA" class="logo-img">
+                <div class="cert-item">
+                    <img src="https://i.postimg.cc/mr7SdPvJ/Certification-USDA-Organic-Carmel-Cosmetics-Labs-01-01.webp" 
+                         alt="Certification USDA Organic" 
+                         class="cert-logo"
+                         loading="lazy">
                 </div>
             </div>
-        </div>
-
-        <div class="controls">
-            <span class="control-dot active"></span>
-            <span class="control-dot"></span>
-            <span class="control-dot"></span>
         </div>
     </section>
 
     <script>
-        // Animation des points de contrôle (optionnel)
-        const dots = document.querySelectorAll('.control-dot');
-        let currentDot = 0;
+        // Optimisation performance mobile
+        const slider = document.querySelector('.slider-track');
+        
+        // Détection mobile pour ajuster la performance
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+            slider.style.animationDuration = '22s';
+        }
 
-        setInterval(() => {
-            dots[currentDot].classList.remove('active');
-            currentDot = (currentDot + 1) % dots.length;
-            dots[currentDot].classList.add('active');
-        }, 3000);
+        // Intersection Observer pour économiser la batterie
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const track = entry.target.querySelector('.slider-track');
+                    if (entry.isIntersecting) {
+                        track.style.animationPlayState = 'running';
+                    } else {
+                        track.style.animationPlayState = 'paused';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            observer.observe(document.querySelector('.slider-container'));
+        }
 
-        // Pause de l'animation sur hover
-        const sliderContainer = document.querySelector('.slider-container');
-        const sliderTrack = document.querySelector('.slider-track');
-
-        sliderContainer.addEventListener('mouseenter', () => {
-            sliderTrack.style.animationPlayState = 'paused';
-        });
-
-        sliderContainer.addEventListener('mouseleave', () => {
-            sliderTrack.style.animationPlayState = 'running';
+        // Préchargement intelligent des images
+        window.addEventListener('load', () => {
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(() => {
+                    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                        const imageUrl = img.src;
+                        const preloadLink = document.createElement('link');
+                        preloadLink.rel = 'prefetch';
+                        preloadLink.href = imageUrl;
+                        document.head.appendChild(preloadLink);
+                    });
+                });
+            }
         });
     </script>
 </body>
