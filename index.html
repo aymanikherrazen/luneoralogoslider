@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certifications | Carmel Cosmetics Labs</title>
-    <meta name="description" content="Certifications professionnelles et standards qualité internationaux">
-    
-    <!-- Preconnect optimisation -->
-    <link rel="preconnect" href="https://i.postimg.cc">
-    
+    <title>Nos Certifications - LUNÉORA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -16,332 +13,551 @@
             box-sizing: border-box;
         }
 
-        body {
-            background: #fff;
-            font-family: system-ui, -apple-system, sans-serif;
-            overflow-x: hidden;
+        :root {
+            --primary: #6F4E37;
+            --secondary: #B59B7B;
+            --light-primary: #E9DCD4;
+            --accent: #C4A88A;
+            --text: #333333;
+            --text-light: #595959;
+            --bg: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
         }
 
-        .certifications-slider {
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #ffffff;
+            padding: 0;
+            margin: 0;
+        }
+
+        .certifications-section {
+            background: #ffffff;
+            padding: 40px 15px;
+            max-width: 1000px;
             width: 100%;
-            padding: 60px 0;
-            background: #fff;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 5px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: #595959;
+            font-size: 14px;
+            font-weight: 400;
+            max-width: 700px;
+            margin: 15px auto 0;
+            line-height: 1.6;
+            font-family: 'Montserrat', sans-serif !important;
         }
 
         .slider-container {
             position: relative;
             overflow: hidden;
-            width: 100%;
-            background: #fff;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            border-top: 1px solid #f0f0f0;
-            border-bottom: 1px solid #f0f0f0;
+            margin-top: 20px;
+            border-radius: 12px;
+            padding: 20px 0;
         }
 
         .slider-track {
             display: flex;
-            animation: autoSlide 30s linear infinite;
-            width: calc(280px * 12);
-            will-change: transform;
-            backface-visibility: hidden;
+            gap: 30px;
+            animation: slideInfinite 25s linear infinite;
+            width: fit-content;
         }
 
-        .cert-item {
-            flex: 0 0 280px;
-            height: 140px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 30px;
-            position: relative;
-        }
-
-        .cert-logo {
-            max-width: 220px;
-            max-height: 80px;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            opacity: 0.9;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            will-change: transform, opacity;
-        }
-
-        .cert-item:hover .cert-logo {
-            opacity: 1;
-            transform: scale(1.02);
-        }
-
-        /* Séparateurs subtils */
-        .cert-item::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 1px;
-            height: 40px;
-            background: linear-gradient(to bottom, transparent, #e8e8e8, transparent);
-            opacity: 0.5;
-        }
-
-        @keyframes autoSlide {
-            0% {
-                transform: translate3d(0, 0, 0);
-            }
-            100% {
-                transform: translate3d(calc(-280px * 6), 0, 0);
-            }
-        }
-
-        /* Pause au survol */
-        .slider-container:hover .slider-track {
+        .slider-track:hover {
             animation-play-state: paused;
         }
 
-        /* Effets de fondu élégants */
+        .certification-logo {
+            flex-shrink: 0;
+            width: 140px;
+            height: 100px;
+            background: var(--bg);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            box-shadow: 0 4px 15px rgba(111, 78, 55, 0.08);
+            border: 1px solid rgba(111, 78, 55, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .certification-logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .certification-logo:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(111, 78, 55, 0.15);
+            border-color: var(--primary);
+        }
+
+        .certification-logo:hover::before {
+            transform: scaleX(1);
+        }
+
+        .cert-logo {
+            width: 100%;
+            height: 65px;
+            object-fit: contain;
+            object-position: center;
+            transition: all 0.4s ease;
+            filter: brightness(1) saturate(0.9);
+        }
+
+        .certification-logo:hover .cert-logo {
+            transform: scale(1.05);
+            filter: brightness(1.1) saturate(1.1);
+        }
+
+        .cert-name {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.2;
+            transition: color 0.3s ease;
+            text-align: center;
+            margin-top: 8px;
+            display: block;
+        }
+
+        .certification-logo:hover .cert-name {
+            color: var(--primary);
+            transform: translateY(-1px);
+        }
+
+
+
+        /* Pause state */
+        .slider-track.paused {
+            animation-play-state: paused;
+        }
+
+        /* Professional fade overlay effects */
         .slider-container::before,
         .slider-container::after {
             content: '';
             position: absolute;
             top: 0;
-            width: 100px;
-            height: 100%;
-            z-index: 10;
+            bottom: 0;
+            width: 60px;
+            z-index: 2;
             pointer-events: none;
         }
 
         .slider-container::before {
             left: 0;
-            background: linear-gradient(to right, #fff 0%, rgba(255,255,255,0.8) 70%, transparent 100%);
+            background: linear-gradient(to right, 
+                rgba(255, 255, 255, 0.9) 0%, 
+                rgba(255, 255, 255, 0.4) 50%, 
+                transparent 100%);
         }
 
         .slider-container::after {
             right: 0;
-            background: linear-gradient(to left, #fff 0%, rgba(255,255,255,0.8) 70%, transparent 100%);
+            background: linear-gradient(to left, 
+                rgba(255, 255, 255, 0.9) 0%, 
+                rgba(255, 255, 255, 0.4) 50%, 
+                transparent 100%);
         }
 
-        /* Responsive Mobile */
+        /* Keyframes for infinite sliding */
+        @keyframes slideInfinite {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .certifications-section {
+            animation: scaleIn 0.8s ease-out;
+        }
+
+        .certification-logo {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .certification-logo:nth-child(1) { animation-delay: 0.1s; }
+        .certification-logo:nth-child(2) { animation-delay: 0.2s; }
+        .certification-logo:nth-child(3) { animation-delay: 0.3s; }
+        .certification-logo:nth-child(4) { animation-delay: 0.4s; }
+        .certification-logo:nth-child(5) { animation-delay: 0.5s; }
+        .certification-logo:nth-child(6) { animation-delay: 0.6s; }
+        .certification-logo:nth-child(7) { animation-delay: 0.7s; }
+        .certification-logo:nth-child(8) { animation-delay: 0.8s; }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .certifications-slider {
-                padding: 40px 0;
+            .certifications-section {
+                padding: 40px 15px;
             }
-            
-            .slider-track {
-                width: calc(200px * 12);
-                animation-duration: 25s;
+
+            .section-title {
+                font-size: 22px;
             }
-            
-            .cert-item {
-                flex: 0 0 200px;
-                height: 120px;
-                padding: 20px;
+
+            .section-subtitle {
+                font-size: 14px;
+                max-width: 90%;
             }
-            
+
+            .certification-logo {
+                width: 120px;
+                height: 90px;
+            }
+
             .cert-logo {
-                max-width: 160px;
-                max-height: 70px;
+                height: 50px;
             }
-            
-            .slider-container::before,
-            .slider-container::after {
-                width: 60px;
+
+            .cert-name {
+                font-size: 9px;
+                margin-top: 5px;
             }
-            
-            @keyframes autoSlide {
-                0% {
-                    transform: translate3d(0, 0, 0);
-                }
-                100% {
-                    transform: translate3d(calc(-200px * 6), 0, 0);
-                }
-            }
+
+
         }
 
         @media (max-width: 480px) {
-            .certifications-slider {
-                padding: 30px 0;
+            .certifications-section {
+                padding: 30px 15px;
             }
-            
+
+            .section-subtitle {
+                max-width: 100%;
+            }
+
+            .certification-logo {
+                width: 100px;
+                height: 80px;
+            }
+
             .slider-track {
-                width: calc(160px * 12);
-                animation-duration: 22s;
-            }
-            
-            .cert-item {
-                flex: 0 0 160px;
-                height: 100px;
-                padding: 15px;
-            }
-            
-            .cert-logo {
-                max-width: 130px;
-                max-height: 60px;
-            }
-            
-            .slider-container {
-                box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-            }
-            
-            .slider-container::before,
-            .slider-container::after {
-                width: 40px;
-            }
-            
-            @keyframes autoSlide {
-                0% {
-                    transform: translate3d(0, 0, 0);
-                }
-                100% {
-                    transform: translate3d(calc(-160px * 6), 0, 0);
-                }
+                gap: 20px;
             }
         }
 
-        /* Performance optimizations */
-        .slider-track {
-            transform-style: preserve-3d;
+        /* Hover effects for mobile */
+        @media (hover: none) {
+            .certification-logo:hover {
+                transform: none;
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            }
+
+            .certification-logo:active {
+                transform: scale(0.98);
+            }
         }
 
-        .cert-logo {
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
+        /* Focus states for accessibility */
+        .certification-logo:focus,
+        .slider-btn:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
         }
 
-        /* Accessibilité */
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .certification-logo {
+                border: 2px solid var(--text);
+            }
+            
+            .logo-icon {
+                background: var(--text);
+            }
+            
+            .logo-icon i {
+                color: var(--bg);
+            }
+        }
+
+        /* Reduced motion support */
         @media (prefers-reduced-motion: reduce) {
-            .slider-track {
-                animation-duration: 120s;
+            .certification-logo,
+            .logo-icon,
+            .logo-icon i,
+            .slider-btn {
+                transition: none;
             }
             
-            .cert-logo {
-                transition: none;
+            .certifications-section,
+            .certification-logo {
+                animation: none;
+                opacity: 1;
+            }
+            
+            .slider-track {
+                animation: none;
             }
         }
     </style>
 </head>
 <body>
-    <section class="certifications-slider">
+    <section class="certifications-section">
+        <div class="section-header">
+            <h2 class="section-title">Nos Certifications</h2>
+            <p class="section-subtitle">Découvrez les standards d'excellence internationaux qui garantissent la qualité supérieure et la sécurité de nos produits LUNÉORA</p>
+        </div>
+        
         <div class="slider-container">
-            <div class="slider-track">
-                <!-- Premier cycle -->
-                <div class="cert-item">
+            <div class="slider-track" id="sliderTrack">
+                <!-- Premier set de logos -->
+                <div class="certification-logo" tabindex="0" role="img" aria-label="Certification GMP">
                     <img src="https://i.postimg.cc/VsgKQbJc/Certification-GMP-Carmel-Cosmetics-Labs-01-01.webp" 
-                         alt="Certification GMP" 
+                         alt="Certification GMP - Good Manufacturing Practices" 
                          class="cert-logo"
                          loading="eager">
+                    <span class="cert-name">GMP Certified</span>
                 </div>
-                <div class="cert-item">
+                
+                <div class="certification-logo" tabindex="0" role="img" aria-label="Certification ISO 9001">
                     <img src="https://i.postimg.cc/52h3qBR8/Certification-ISO-9001-03-1024x473-1.webp" 
-                         alt="Certification ISO 9001" 
+                         alt="Certification ISO 9001 - Système de management de la qualité" 
                          class="cert-logo"
                          loading="lazy">
+                    <span class="cert-name">ISO 9001</span>
                 </div>
-                <div class="cert-item">
+                
+                <div class="certification-logo" tabindex="0" role="img" aria-label="Certification ISO Standards">
                     <img src="https://i.postimg.cc/TYPCRYb5/Certification-ISO-Carmel-Cosmetics-Labs-01-01-01.webp" 
-                         alt="Certification ISO" 
+                         alt="Certification ISO - Standards internationaux" 
                          class="cert-logo"
                          loading="lazy">
+                    <span class="cert-name">ISO Standards</span>
                 </div>
-                <div class="cert-item">
+                
+                <div class="certification-logo" tabindex="0" role="img" aria-label="Certification ONSSA">
                     <img src="https://i.postimg.cc/dVk6yH4q/Certification-ONSSA-Carmel-Cosmetics-Labs-01-01.webp" 
-                         alt="Certification ONSSA" 
+                         alt="Certification ONSSA - Office National de Sécurité Sanitaire" 
                          class="cert-logo"
                          loading="lazy">
+                    <span class="cert-name">ONSSA Approved</span>
                 </div>
-                <div class="cert-item">
+                
+                <div class="certification-logo" tabindex="0" role="img" aria-label="Certification Responsible Care">
                     <img src="https://i.postimg.cc/BQwNt95Y/Certification-Responsible-Care-Carmel-Cosmetics-Labs-01-01.webp" 
-                         alt="Certification Responsible Care" 
+                         alt="Certification Responsible Care - Chimie responsable" 
                          class="cert-logo"
                          loading="lazy">
+                    <span class="cert-name">Responsible Care</span>
                 </div>
-                <div class="cert-item">
+                
+                <div class="certification-logo" tabindex="0" role="img" aria-label="Certification USDA Organic">
                     <img src="https://i.postimg.cc/mr7SdPvJ/Certification-USDA-Organic-Carmel-Cosmetics-Labs-01-01.webp" 
-                         alt="Certification USDA Organic" 
+                         alt="Certification USDA Organic - Agriculture biologique" 
                          class="cert-logo"
                          loading="lazy">
+                    <span class="cert-name">USDA Organic</span>
                 </div>
 
-                <!-- Deuxième cycle pour boucle infinie -->
-                <div class="cert-item">
+                <!-- Duplication pour l'effet de boucle infinie -->
+                <div class="certification-logo" tabindex="0" role="img" aria-label="Certification GMP">
                     <img src="https://i.postimg.cc/VsgKQbJc/Certification-GMP-Carmel-Cosmetics-Labs-01-01.webp" 
-                         alt="Certification GMP" 
+                         alt="Certification GMP - Good Manufacturing Practices" 
                          class="cert-logo"
                          loading="lazy">
+                    <span class="cert-name">GMP Certified</span>
                 </div>
-                <div class="cert-item">
+                
+                <div class="certification-logo" tabindex="0" role="img" aria-label="Certification ISO 9001">
                     <img src="https://i.postimg.cc/52h3qBR8/Certification-ISO-9001-03-1024x473-1.webp" 
-                         alt="Certification ISO 9001" 
+                         alt="Certification ISO 9001 - Système de management de la qualité" 
                          class="cert-logo"
                          loading="lazy">
+                    <span class="cert-name">ISO 9001</span>
                 </div>
-                <div class="cert-item">
+                
+                <div class="certification-logo" tabindex="0" role="img" aria-label="Certification ISO Standards">
                     <img src="https://i.postimg.cc/TYPCRYb5/Certification-ISO-Carmel-Cosmetics-Labs-01-01-01.webp" 
-                         alt="Certification ISO" 
+                         alt="Certification ISO - Standards internationaux" 
                          class="cert-logo"
                          loading="lazy">
+                    <span class="cert-name">ISO Standards</span>
                 </div>
-                <div class="cert-item">
+                
+                <div class="certification-logo" tabindex="0" role="img" aria-label="Certification ONSSA">
                     <img src="https://i.postimg.cc/dVk6yH4q/Certification-ONSSA-Carmel-Cosmetics-Labs-01-01.webp" 
-                         alt="Certification ONSSA" 
+                         alt="Certification ONSSA - Office National de Sécurité Sanitaire" 
                          class="cert-logo"
                          loading="lazy">
+                    <span class="cert-name">ONSSA Approved</span>
                 </div>
-                <div class="cert-item">
+                
+                <div class="certification-logo" tabindex="0" role="img" aria-label="Certification Responsible Care">
                     <img src="https://i.postimg.cc/BQwNt95Y/Certification-Responsible-Care-Carmel-Cosmetics-Labs-01-01.webp" 
-                         alt="Certification Responsible Care" 
+                         alt="Certification Responsible Care - Chimie responsable" 
                          class="cert-logo"
                          loading="lazy">
+                    <span class="cert-name">Responsible Care</span>
                 </div>
-                <div class="cert-item">
+                
+                <div class="certification-logo" tabindex="0" role="img" aria-label="Certification USDA Organic">
                     <img src="https://i.postimg.cc/mr7SdPvJ/Certification-USDA-Organic-Carmel-Cosmetics-Labs-01-01.webp" 
-                         alt="Certification USDA Organic" 
+                         alt="Certification USDA Organic - Agriculture biologique" 
                          class="cert-logo"
                          loading="lazy">
+                    <span class="cert-name">USDA Organic</span>
                 </div>
             </div>
         </div>
+        
+
     </section>
 
     <script>
-        // Optimisation performance mobile
-        const slider = document.querySelector('.slider-track');
+        // Professional slider functionality
+        const sliderTrack = document.getElementById('sliderTrack');
+        let autoSlideInterval;
         
-        // Détection mobile pour ajuster la performance
-        const isMobile = window.innerWidth <= 768;
-        if (isMobile) {
-            slider.style.animationDuration = '22s';
+        // Auto-slide functionality with smooth transitions
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                // Auto-slide continues infinitely with CSS animation
+            }, 4000); // 4 seconds per slide for professional pacing
         }
-
-        // Intersection Observer pour économiser la batterie
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    const track = entry.target.querySelector('.slider-track');
-                    if (entry.isIntersecting) {
-                        track.style.animationPlayState = 'running';
-                    } else {
-                        track.style.animationPlayState = 'paused';
-                    }
-                });
-            }, { threshold: 0.1 });
+        
+        // Pause auto-slide on hover
+        sliderTrack.addEventListener('mouseenter', function() {
+            this.style.animationPlayState = 'paused';
+        });
+        
+        // Resume auto-slide on mouse leave
+        sliderTrack.addEventListener('mouseleave', function() {
+            this.style.animationPlayState = 'running';
+        });
+        
+        // Enhanced hover effects for certifications
+        const logos = document.querySelectorAll('.certification-logo');
+        
+        logos.forEach((logo, index) => {
+            logo.addEventListener('mouseenter', function() {
+                const img = this.querySelector('.cert-logo');
+                const text = this.querySelector('.cert-name');
+                
+                if (img) img.style.transform = 'scale(1.05) translateY(-2px)';
+                if (text) text.style.transform = 'translateY(-1px)';
+            });
             
-            observer.observe(document.querySelector('.slider-container'));
-        }
+            logo.addEventListener('mouseleave', function() {
+                const img = this.querySelector('.cert-logo');
+                const text = this.querySelector('.cert-name');
+                
+                if (img) img.style.transform = '';
+                if (text) text.style.transform = '';
+            });
+            
+            // Click animation for mobile
+            logo.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+            
+            // Keyboard navigation
+            logo.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+                
+                // Arrow key navigation
+                if (e.key === 'ArrowRight' && index < logos.length - 1) {
+                    logos[index + 1].focus();
+                }
+                if (e.key === 'ArrowLeft' && index > 0) {
+                    logos[index - 1].focus();
+                }
+            });
+        });
+        
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-        // Préchargement intelligent des images
-        window.addEventListener('load', () => {
-            if ('requestIdleCallback' in window) {
-                requestIdleCallback(() => {
-                    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-                        const imageUrl = img.src;
-                        const preloadLink = document.createElement('link');
-                        preloadLink.rel = 'prefetch';
-                        preloadLink.href = imageUrl;
-                        document.head.appendChild(preloadLink);
-                    });
-                });
-            }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observe section for scroll animations
+        observer.observe(document.querySelector('.certifications-section'));
+        
+        // Observe all logos for scroll animations
+        logos.forEach(logo => {
+            logo.style.animationPlayState = 'paused';
+            observer.observe(logo);
         });
     </script>
 </body>
